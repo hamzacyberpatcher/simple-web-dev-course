@@ -9,6 +9,11 @@
         {
             font-family: Arial;
         }
+        p
+        {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
         .video-preview
         {
             width: 300px;
@@ -25,7 +30,38 @@
             display: block;
             margin-bottom: 10px;
         }
-        
+        .video-channel-perview
+        {
+            display: inline-block;
+            width: 50px;
+            vertical-align: top;
+            margin-right: 4px;
+            border-radius: 100%;
+        }
+        .video-info-text
+        {
+            display: inline-block;
+            width: 80%;
+            vertical-align: top;
+        }
+
+        .video-name, .video-stats
+        {
+            font-size: 0.8rem;
+            color: grey;
+        }
+        .video-name
+        {
+            margin-top: 8px;
+        }
+        .video-stats
+        {
+            margin-top: 4px;
+        }
+        .video-info
+        {
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -33,16 +69,26 @@
 
     <div class="video-preview">
         <img src="./thumbnails/thumbnail-1.webp" alt="" class="video-thumbnail">
-        <p class="video-title">Talking Tech and AI with Google CEO Sundar Pichai!</p>
-        <p class="video-name">Marques Brownlee</p>
-        <p class="video-stats">3.4M views &#183; 6 months ago</p>
+        <div class="video-info">
+            <img src="./channel/channel-1.jpeg" alt="" class="video-channel-perview">
+            <div class="video-info-text">
+                <p class="video-title">Talking Tech and AI with Google CEO Sundar Pichai!</p>
+                <p class="video-name">Marques Brownlee</p>
+                <p class="video-stats">3.4M views &#183; 6 months ago</p>
+            </div>
+        </div>
     </div>
 
     <div class="video-preview">
         <img src="./thumbnails/thumbnail-2.webp" alt="" class="video-thumbnail">
-        <p class="video-title">Try Not to Laugh Challenge #9</p>
-        <p class="video-name">Markiplier</p>
-        <p class="video-stats">19M views &#183; 4 years ago</p>
+        <div class="video-info">
+            <img src="./channel/channel-2.jpeg" alt="" class="video-channel-perview">
+            <div class="video-info-text">
+                <p class="video-title">Try Not To Laugh Challenge #9</p>
+                <p class="video-name">Markiplier</p>
+                <p class="video-stats">19M views &#183; 4 years ago</p>
+            </div>
+        </div>
     </div>
 
 </body>
