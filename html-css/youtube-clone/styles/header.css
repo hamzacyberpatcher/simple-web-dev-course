@@ -7,19 +7,88 @@
 }
 
 .left-section {
-    width: 150px;
-    background-color: pink;
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-icon {
+    height: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.yt-logo {
+    height: 30px;
 }
 
 .middle-section {
-    flex: 1;
     margin-left: 70px;
     margin-right: 35px;
-    background-color: lightblue;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-search {
     max-width: 400px;
+    flex: 1;
+    width: 0;
+    height: 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.search-button {
+    height: 44px;
+    width: 64px;
+    border-width: 1px;
+    border-style: solid;
+    margin-left: -1px;
+}
+
+.search-icon {
+    height: 25px;
+}
+
+.voice-search-button {
+    height: 45px;
+    width: 50px;
+    border: none;
+    border-radius: 100%;
+    margin-left: 20px;
+}
+
+.voice-search-icon {
+    height: 25px;
 }
 
 .right-section {
-    width: 200px;
-    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 182px;
+}
+
+.upload-icon {
+    height: 24px;
+}
+
+.yt-apps-icon {
+    height: 24px;
+}
+
+.notifications-icon {
+    height: 24px;
+}
+
+.channel-icon {
+    height: 32px;
+    border-radius: 80px;
+    object-fit: contain;
+    margin-right: 20px;
 }
