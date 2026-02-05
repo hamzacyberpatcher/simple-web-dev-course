@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100px;
+            width: 300px;
+            padding: 8px 12px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
+        }
+        .notification {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .notification-number {
+            background-color: aqua;
+            border-radius: 10px;
+            padding: 2px 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="notification">
+            <p class="notification-detail">Home</p>
+            <p class="notification-number">14</p>
+        </div>
+        <div class="notification">
+            <p class="notification-detail">Notifications</p>
+            <p class="notification-number">3</p>
+        </div>
+        <div class="notification">
+            <p class="notification-detail">Messages</p>
+            <p class="notification-number">5</p>
+        </div>
+    </div>
+</body>
+</html>
