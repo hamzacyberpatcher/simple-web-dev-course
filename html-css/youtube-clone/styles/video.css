@@ -35,3 +35,17 @@ img {
 .video-channel-name {
     margin-top: 8px;
 }
+
+.thumbnail-row {
+    position: relative
+}
+
+.video-time {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    padding: 2px 4px;
+}
