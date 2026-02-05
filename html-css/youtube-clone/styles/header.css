@@ -11,11 +11,9 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgb(190, 188, 188);
-    background-color: rgba(255, 255, 255, 0.7); 
-    
-    
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     z-index: 1;
 }
 
