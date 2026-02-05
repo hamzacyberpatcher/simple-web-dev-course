@@ -5,6 +5,33 @@
     row-gap: 15px;
 }
 
+@media(max-width: 1000px) {
+    .video-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+}
+
+@media(max-width: 750px) {
+    .video-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+}
+
+@media(max-width: 550px) {
+    .video-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+}
+
 img {
     width: 100%
 }
