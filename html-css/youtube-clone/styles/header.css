@@ -3,7 +3,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    height: 55px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(190, 188, 188);
 }
 
 .left-section {
