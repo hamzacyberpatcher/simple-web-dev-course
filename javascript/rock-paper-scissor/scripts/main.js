@@ -19,7 +19,7 @@ function updateScore() {
 function updateStatus(status) {
     const statusElem = document.querySelector('.js-game-status');
     if (status === 'win') statusElem.innerHTML = 'You Win';
-    else if (status === 'tie') statusElem.innerHTML = 'It\'s a tie';
+    else if (status === 'tie') statusElem.innerHTML = 'It\'s a Tie';
     else statusElem.innerHTML = 'You Lose';
 }
 
