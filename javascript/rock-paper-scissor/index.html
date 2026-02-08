@@ -7,16 +7,25 @@
     <link rel="stylesheet" href="./styles/general.css">
     <link rel="stylesheet" href="./styles/buttons.css">
     <link rel="stylesheet" href="./styles/text.css">
+    <link rel="stylesheet" href="./styles/game-elems.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <button class="game-button" onclick="playMove('rock')"><img src="./images/rock-emoji.png" alt="" class="button-img"></button>
-    <button class="game-button" onclick="playMove('paper')"><img src="./images/paper-emoji.png" alt="" class="button-img"></button>
-    <button class="game-button" onclick="playMove('scissors')"><img src="./images/scissors-emoji.png" alt="" class="button-img"></button>
-    <p class="js-game-status game-status"></p>
-    <p class="js-moves"></p>
-    <p class="js-score"></p>
-    <button class="reset-button" onclick="reset()">Reset Score</button>
+    <main class="game-container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="moves-button-container">
+            <button class="game-button" onclick="playMove('rock')"><img src="./images/rock-emoji.png" alt="" class="button-img"></button>
+            <button class="game-button" onclick="playMove('paper')"><img src="./images/paper-emoji.png" alt="" class="button-img"></button>
+            <button class="game-button" onclick="playMove('scissors')"><img src="./images/scissors-emoji.png" alt="" class="button-img"></button>
+        </div>
+            <div class="status-container">
+            <p class="js-game-status game-status"></p>
+            <p class="js-moves"></p>
+            <p class="js-score"></p>
+        </div>
+        <div class="reset-container">
+            <button class="reset-button" onclick="reset()">Reset Score</button>
+        </div>
+    </main>
 
     <script src="./scripts/main.js"></script>
 </body>

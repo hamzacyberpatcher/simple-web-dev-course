@@ -9,6 +9,11 @@
     background-color: rgb(25, 25, 25);
     cursor: pointer;
     margin-right: 10px;
+    transition: transform 0.25s;
+}
+
+.game-button:hover {
+    transform: scale(1.1);
 }
 
 .reset-button {
