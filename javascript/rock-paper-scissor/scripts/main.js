@@ -25,7 +25,7 @@ function updateStatus(status) {
 
 function updateMoves(playerMove, compMove) {
     const movesElem = document.querySelector('.js-moves');
-    movesElem.innerHTML = `You ${playerMove} ${compMove} Computer`;
+    movesElem.innerHTML = `You <img src="./images/${playerMove}-emoji.png" class="move-emoji"> <img src="./images/${compMove}-emoji.png" class="move-emoji"> Computer`;
 }
 
 function clearStatus() {

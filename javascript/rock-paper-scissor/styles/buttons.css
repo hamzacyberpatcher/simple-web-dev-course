@@ -1,0 +1,17 @@
+.button-img {
+    width: 50px;
+}
+
+.game-button {
+    border-radius: 100%;
+    padding: 20px;
+    border: 2px solid white;
+    background-color: rgb(25, 25, 25);
+    cursor: pointer;
+}
+
+.reset-button {
+    font-size: 1rem;
+    padding: 15px 8px;
+    cursor: pointer;
+}
