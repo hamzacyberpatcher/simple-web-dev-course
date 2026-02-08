@@ -93,3 +93,5 @@ function reset() {
     clearStatus();
     clearMoves();
 }
+
+updateScore();
