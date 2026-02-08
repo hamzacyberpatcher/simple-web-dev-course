@@ -7,6 +7,7 @@
     align-items: center;
     border-radius: 20px;
     transition: transform 0.25s, box-shadow 0.25s;
+    margin: 0px 15px;
 }
 
 .game-container:hover {
@@ -16,6 +17,7 @@
 
 .moves-button-container {
     margin-top: 20px;
+    display: flex;
 }
 
 .status-container {
