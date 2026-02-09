@@ -22,8 +22,6 @@ body {
     border: none;
     color: white;
     font-weight: bold;
-    margin-left: 4px;
-    width: 100px;
 }
 
 .remove-button {
@@ -33,9 +31,11 @@ body {
     border: none;
 }
 
-.task-container {
+.task-container,
+.ui-container {
     display: grid;
-    grid-template-columns: 200px 150px 100px;
+    grid-template-columns: 250px 150px 100px;
     align-items: center;
     margin-top: 10px;
+    column-gap: 10px;
 }
