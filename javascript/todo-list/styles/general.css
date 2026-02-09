@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-name,
+.input-date,
+.add-button,
+.remove-button {
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.add-button,
+.remove-button {
+    height: 35px;
+    cursor: pointer;
+}
+
+.add-button {
+    background-color: rgb(27, 209, 76);
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 4px;
+    width: 100px;
+}
+
+.remove-button {
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.task-container {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    align-items: center;
+    margin-top: 10px;
+}
