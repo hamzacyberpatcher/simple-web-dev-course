@@ -1,10 +1,34 @@
+const rockButton = document.querySelector('.js-rock-button');
+rockButton.addEventListener('click', () => playMove('rock'));
+
+const paperButton = document.querySelector('.js-paper-button');
+paperButton.addEventListener('click', () => playMove('paper'));
+
+const scissorsButton = document.querySelector('.js-scissors-button');
+scissorsButton.addEventListener('click', () => playMove('scissors'));
+
+const resetButton = document.querySelector('.js-reset-button');
+resetButton.addEventListener('click', () => reset());
+
+const autoPlayButton = document.querySelector('.js-autoplay');
+autoPlayButton.addEventListener('click', () => autoplay());
+
+document.body.addEventListener('keydown', event => {
+    if (event.key === 'r') {
+        playMove('rock');
+    } else if (event.key === 'p') {
+        playMove('paper');
+    } else if (event.key === 's') {
+        playMove('scissors');
+    }
+})
+
 let score = JSON.parse(localStorage.getItem('score')) || 
     {
         wins: 0,
         loses: 0,
         ties: 0
     };
-
 
 let isAutoPlaying = false;
 let intervalId;

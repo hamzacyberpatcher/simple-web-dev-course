@@ -1,5 +1,8 @@
 const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
+const addButton = document.querySelector('.js-add');
+addButton.addEventListener('click', () => addTask());
+
 function updateTasks() {
     const tasksContainerElem = document.querySelector('.js-tasks-container');
 
@@ -7,9 +10,14 @@ function updateTasks() {
 
     tasks.forEach((task, i) => {
         const { name, date } = task;
-        tasksContainerElem.innerHTML += `<div class="task-container"><span class="task-name">${name}</span> <span class="task-date">${date}</span> <button class="remove-button" onclick="removeTask(${i})">Delete</button></div>`;
+        tasksContainerElem.innerHTML += `<div class="task-container"><span class="task-name">${name}</span> <span class="task-date">${date}</span> <button class="remove-button js-remove-button">Delete</button></div>`;
     })
 
+    document.querySelectorAll('.js-remove-button').forEach(
+        (buttonElem, index) => {
+            buttonElem.addEventListener('click', () => removeTask(index));
+        }
+    )
 }
 
 function addTask() {

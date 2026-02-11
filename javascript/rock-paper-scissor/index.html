@@ -14,9 +14,9 @@
     <main class="game-container">
         <h1>Rock Paper Scissors</h1>
         <div class="moves-button-container">
-            <button class="game-button" onclick="playMove('rock')"><img src="./images/rock-emoji.png" alt="" class="button-img"></button>
-            <button class="game-button" onclick="playMove('paper')"><img src="./images/paper-emoji.png" alt="" class="button-img"></button>
-            <button class="game-button" onclick="playMove('scissors')"><img src="./images/scissors-emoji.png" alt="" class="button-img"></button>
+            <button class="game-button js-rock-button"><img src="./images/rock-emoji.png" alt="" class="button-img"></button>
+            <button class="game-button js-paper-button"><img src="./images/paper-emoji.png" alt="" class="button-img"></button>
+            <button class="game-button js-scissors-button"><img src="./images/scissors-emoji.png" alt="" class="button-img"></button>
         </div>
             <div class="status-container">
             <p class="js-game-status game-status"></p>
@@ -24,8 +24,8 @@
             <p class="js-score"></p>
         </div>
         <div class="ui-buttons-container">
-            <button class="reset-button" onclick="reset()">Reset Score</button>
-            <button class="auto-play-button js-autoplay" onclick="autoplay()">Auto Play</button>
+            <button class="reset-button js-reset-button">Reset Score</button>
+            <button class="auto-play-button js-autoplay">Auto Play</button>
         </div>
     </main>
 
