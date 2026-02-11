@@ -6,7 +6,8 @@ function updateTasks() {
     tasksContainerElem.innerHTML = '';
 
     tasks.forEach((task, i) => {
-        tasksContainerElem.innerHTML += `<div class="task-container"><span class="task-name">${task.name}</span> <span class="task-date">${task.date}</span> <button class="remove-button" onclick="removeTask(${i})">Delete</button></div>`;
+        const { name, date } = task;
+        tasksContainerElem.innerHTML += `<div class="task-container"><span class="task-name">${name}</span> <span class="task-date">${date}</span> <button class="remove-button" onclick="removeTask(${i})">Delete</button></div>`;
     })
 
 }
