@@ -5,9 +5,10 @@ function updateTasks() {
 
     tasksContainerElem.innerHTML = '';
 
-    for(let i = 0; i < tasks.length; i++) {
-        tasksContainerElem.innerHTML += `<div class="task-container"><span class="task-name">${tasks[i].name}</span> <span class="task-date">${tasks[i].date}</span> <button class="remove-button" onclick="removeTask(${i})">Delete</button></div>`;
-    }
+    tasks.forEach(function(task, i) {
+        tasksContainerElem.innerHTML += `<div class="task-container"><span class="task-name">${task.name}</span> <span class="task-date">${task.date}</span> <button class="remove-button" onclick="removeTask(${i})">Delete</button></div>`;
+    })
+
 }
 
 function addTask() {
