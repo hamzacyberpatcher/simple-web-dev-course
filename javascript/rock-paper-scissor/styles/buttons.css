@@ -16,7 +16,8 @@
     transform: scale(1.1);
 }
 
-.reset-button {
+.reset-button,
+.auto-play-button {
     font-size: 1rem;
     padding: 15px 8px;
     cursor: pointer;

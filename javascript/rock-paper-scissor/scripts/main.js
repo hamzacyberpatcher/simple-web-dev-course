@@ -5,6 +5,30 @@ let score = JSON.parse(localStorage.getItem('score')) ||
         ties: 0
     };
 
+
+let isAutoPlaying = false;
+let intervalId;
+
+function autoplay() {
+    if (!isAutoPlaying) {
+        intervalId = setInterval(function () {
+            playMove(pickComputerMove());
+        }, 1000);
+        isAutoPlaying = true;
+    } else {
+        clearInterval(intervalId);
+        isAutoPlaying = false;
+    }
+
+    const playButton = document.querySelector('.js-autoplay');
+
+    if (isAutoPlaying) {
+        playButton.innerHTML = 'Stop Auto Play';
+    } else {
+        playButton.innerHTML = 'Auto Play';
+    }
+}
+
 function pickComputerMove() {
     const moves = ['rock', 'paper', 'scissors'];
     const randomIndex = Math.floor(Math.random() * moves.length);
