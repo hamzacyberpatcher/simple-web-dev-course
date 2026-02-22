@@ -5,7 +5,10 @@ export function updateQartQuantity() {
 
     cart.forEach(cartItem => cartQuantity += cartItem.quantity);
 
-    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+    
+    const quantityElem = document.querySelector('.js-cart-quantity');
+
+    quantityElem.innerHTML = (cartQuantity != 0) ? cartQuantity : '';
 }
 
 export function addToCart(productid, itemQuantity) {
@@ -30,4 +33,8 @@ export function cartQuantity() {
     let quantity = 0;
     cart.forEach(cartItem => quantity += cartItem.quantity);
     return quantity;
+}
+
+export function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
 }

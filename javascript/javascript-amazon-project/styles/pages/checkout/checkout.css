@@ -209,3 +209,11 @@
   margin-top: 11px;
   margin-bottom: 15px;
 }
+
+.update-quantity-inputs {
+  display: inline-block;
+}
+
+.not-editing {
+  display: none;
+}

@@ -86,7 +86,7 @@ document.querySelectorAll('.js-add-to-cart').forEach(button => {
 
         addedMessageTimeouts[productid] = timeoutId;
 
-        localStorage.setItem('cart', JSON.stringify(CartModule.cart));
+        CartModule.saveCart();
     })
 });
 
