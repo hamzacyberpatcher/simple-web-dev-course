@@ -25,3 +25,9 @@ export function addToCart(productid, itemQuantity) {
         });
     }
 }
+
+export function cartQuantity() {
+    let quantity = 0;
+    cart.forEach(cartItem => quantity += cartItem.quantity);
+    return quantity;
+}
