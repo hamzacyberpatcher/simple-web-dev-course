@@ -5,7 +5,6 @@ export function updateQartQuantity() {
 
     cart.forEach(cartItem => cartQuantity += cartItem.quantity);
 
-    
     const quantityElem = document.querySelector('.js-cart-quantity');
 
     quantityElem.innerHTML = (cartQuantity != 0) ? cartQuantity : '';
@@ -24,7 +23,8 @@ export function addToCart(productid, itemQuantity) {
     } else {
         cart.push({
             productId: productid,
-            quantity: itemQuantity
+            quantity: itemQuantity,
+            deliveryOptionId: '1'
         });
     }
 }

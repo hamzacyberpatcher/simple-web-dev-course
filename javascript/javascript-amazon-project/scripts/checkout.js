@@ -1,23 +1,65 @@
 import * as CartModule from '../data/cart.js'
 import * as ProductsModule from '../data/products.js'
+import deliveryOptions  from '../data/deliveryOptions.js';
+import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
 
 function updateCheckoutQuantity() {
     document.querySelector('.js-checkout-quantity').innerHTML = `${CartModule.cartQuantity()} items`;
     document.querySelector('.js-payment-order-quantity').innerHTML = `Items (${CartModule.cartQuantity()}):`
 }
 
+function deliveryOptionsHtml(cartItem, productId) {
+    let html = '';
+    const today = dayjs();
+
+    deliveryOptions.forEach(option => {
+        const deliveryDate = today.add(option.deliveryDays, 'days');
+        const dateString = deliveryDate.format('dddd, MMMM D');
+        const shippingText = option.id === '1' ? 'FREE' : `$${option.priceCents / 100} - `;
+        const isChecked = cartItem.deliveryOptionId === option.id ? true : false;
+        html += `
+        <div class="delivery-option">
+        <input type="radio" ${isChecked ? 'checked' : ''}
+            class="delivery-option-input"
+            name="delivery-option-${productId}">
+        <div>
+            <div class="delivery-option-date">
+            ${dateString}
+            </div>
+            <div class="delivery-option-price">
+            ${shippingText} Shipping
+            </div>
+        </div>
+        </div>
+        `;
+    });
+
+    return html;
+}
+
 function renderCheckoutPage() {
     let orderSummaryHtml = '';
+
+    const today = dayjs();
 
     CartModule.cart.forEach(cartItem => {
     const { productId, quantity } = cartItem;
 
     const cartProduct = ProductsModule.findProduct(productId);
 
+    let deliveryOption;
+
+    deliveryOptions.forEach(option => {
+        if (option.id === cartItem.deliveryOptionId) deliveryOption = option;
+    });
+
+    const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
+    const deliveryString = deliveryDate.format('dddd, MMMM D');
+
     const orderSummary = `
         <div class="cart-item-container js-cart-item-container-${productId}">
                 <div class="delivery-date">
-                Delivery date: Tuesday, June 21
+                Delivery date: ${deliveryString}
                 </div>
 
                 <div class="cart-item-details-grid">
@@ -52,45 +94,9 @@ function renderCheckoutPage() {
                     <div class="delivery-options-title">
                     Choose a delivery option:
                     </div>
-                    <div class="delivery-option">
-                    <input type="radio" checked
-                        class="delivery-option-input"
-                        name="delivery-option-${productId}">
-                    <div>
-                        <div class="delivery-option-date">
-                        Tuesday, June 21
-                        </div>
-                        <div class="delivery-option-price">
-                        FREE Shipping
-                        </div>
-                    </div>
-                    </div>
-                    <div class="delivery-option">
-                    <input type="radio"
-                        class="delivery-option-input"
-                        name="delivery-option-${productId}">
-                    <div>
-                        <div class="delivery-option-date">
-                        Wednesday, June 15
-                        </div>
-                        <div class="delivery-option-price">
-                        $4.99 - Shipping
-                        </div>
-                    </div>
-                    </div>
-                    <div class="delivery-option">
-                    <input type="radio"
-                        class="delivery-option-input"
-                        name="delivery-option-${productId}">
-                    <div>
-                        <div class="delivery-option-date">
-                        Monday, June 13
-                        </div>
-                        <div class="delivery-option-price">
-                        $9.99 - Shipping
-                        </div>
-                    </div>
-                    </div>
+                    
+                    ${deliveryOptionsHtml(cartItem, productId)}
+                    
                 </div>
                 </div>
         </div>
