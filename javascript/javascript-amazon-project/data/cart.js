@@ -38,3 +38,11 @@ export function cartQuantity() {
 export function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+export function updateDeliveryOption(productId, deliveryOption) {
+    cart.forEach(cartItem => {
+        if (cartItem.productId === productId)
+            cartItem.deliveryOptionId = deliveryOption;
+    });
+    saveCart();
+}
