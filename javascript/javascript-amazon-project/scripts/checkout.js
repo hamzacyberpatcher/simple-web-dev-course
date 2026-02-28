@@ -3,9 +3,12 @@ import * as ProductsModule from '../data/products.js'
 import deliveryOptions from '../data/deliveryOptions.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
 
-ProductsModule.loadProducts().then(() => {
+async function loadPage() {
+    await ProductsModule.loadProducts();
     renderCheckoutPage();
-})
+}
+
+loadPage();
 
 function updateCheckoutQuantity() {
     document.querySelector('.js-checkout-quantity').innerHTML = `${CartModule.cartQuantity()} items`;

@@ -4,9 +4,12 @@ import {products, loadProducts} from '../data/products.js'
 let productsHtml = '';
 const addedMessageTimeouts = {};
 
-loadProducts().then(() => {
+async function loadPage() {
+    await loadProducts();
     renderProductsPage();
-})
+}
+
+loadPage();
 
 function renderProductsPage() {
     products.forEach(product => {
