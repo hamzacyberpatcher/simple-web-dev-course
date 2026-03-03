@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+    <style>
+        .btn-off, 
+        .btn-on {
+            height: 25px;
+            width: 40px;
+            border: none;
+            color: white
+        }
+
+        .btn-off {
+            background-color: red;
+        }
+
+        .btn-on {
+            background-color: green;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      
+      function Input({ hideVal }) {
+        return (
+            <input 
+            type = {hideVal ? 'password' : 'true'}
+            />
+        );
+      }
+
+      function HideButton({ hideVal, setHideVal }) {
+        function changeHideVal() {
+            setHideVal(!hideVal);
+        }
+
+        return (
+            <button onClick={changeHideVal}>{ hideVal ? 'Show' : 'Hide' }</button>
+        );
+      }
+      
+      function App() {
+        const [ hideVal, setHideVal ] = React.useState(false);
+
+        return (
+            <>
+                <Input
+                    hideVal={hideVal}
+                />   
+                <HideButton 
+                    hideVal={hideVal}
+                    setHideVal={setHideVal}
+                /> 
+            </>
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

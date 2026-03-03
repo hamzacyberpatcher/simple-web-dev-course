@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>React Basics</title>
+</head>
+
+<body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+    <script type="text/babel">
+
+        function TimeTag() {
+            const [ timeVal, setTimeVal ] = React.useState(dayjs().format('HH:mm:ss'));
+
+            React.useEffect(() => {
+                setTimeout(() => {
+                    setTimeVal(dayjs().format('HH:mm:ss'));
+                }, 1000);
+            });
+
+            return (
+                <p>Current time: {timeVal}</p>
+            )
+        }
+
+        function App() {
+            return (
+                <TimeTag />
+            );
+        }
+
+
+        const container = document.querySelector('.js-container');
+        ReactDOM.createRoot(container).render(<App />);
+    </script>
+</body>
+
+</html>
