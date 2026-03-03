@@ -17,8 +17,13 @@
         function ChatInput({ chatMessages, setChatMessages }) {
             const inputMessageState = React.useState('');
             const [inputMessage, setInputMessage] = inputMessageState;
+            const [loadingState, setLoadingState] = React.useState(false);
 
-            function sendMessage() {
+            async function sendMessage() {
+
+                if (loadingState === true ) {
+                    return;
+                }
 
                 const newChatMessages = [...chatMessages, {
                     message: inputMessage,
@@ -26,7 +31,19 @@
                     key: crypto.randomUUID()
                 }];
 
-                const response = Chatbot.getResponse(inputMessage);
+                setChatMessages([
+                    ...newChatMessages,
+                    {
+                        message: 'Loading....',
+                        sender: 'robot',
+                        key: crypto.randomUUID()
+                    }
+                ]);
+
+                setLoadingState(true);
+
+                const response = await Chatbot.getResponseAsync(inputMessage);
+                setInputMessage('');
                 
                 setChatMessages([
                     ...newChatMessages,
@@ -37,12 +54,24 @@
                     }
                 ]);
 
+                setLoadingState(false);
 
-                setInputMessage('');
             }
 
             function inputMessageSetting(event) {
                 setInputMessage(event.target.value);
+            }
+
+            function inputKeyTrigger(event) {
+                if (event.key === 'Enter') {
+                    if (inputMessage) {
+                        sendMessage();
+                    }
+                }
+
+                if (event.key === 'Escape') {
+                    setInputMessage('');
+                }
             }
 
             return (
@@ -52,6 +81,7 @@
                         size="30"
                         onChange={inputMessageSetting}
                         value={inputMessage}
+                        onKeyDown={inputKeyTrigger}
                     />
                     <button onClick={sendMessage}>Send</button>
                 </div>
