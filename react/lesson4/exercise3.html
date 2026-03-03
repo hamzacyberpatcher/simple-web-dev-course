@@ -19,10 +19,10 @@
             const [ timeVal, setTimeVal ] = React.useState(dayjs().format('HH:mm:ss'));
 
             React.useEffect(() => {
-                setTimeout(() => {
+                setInterval(() => {
                     setTimeVal(dayjs().format('HH:mm:ss'));
                 }, 1000);
-            });
+            }, []);
 
             return (
                 <p>Current time: {timeVal}</p>
