@@ -1,0 +1,32 @@
+
+.msg-box-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: start;
+  margin-top: 5px;
+}
+
+.msg-box-robot {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-top: 5px;
+}
+
+.msg-box {
+  background-color: lightgrey;
+  padding: 12px 15px;
+  margin-top: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+
+.chat-messages-container {
+  flex-grow: 1;
+  margin-top: 10px;
+  overflow: scroll;
+  scrollbar-width: none;
+}

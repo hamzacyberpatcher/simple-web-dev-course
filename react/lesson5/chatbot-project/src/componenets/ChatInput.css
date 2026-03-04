@@ -1,0 +1,22 @@
+.send-button {
+  background-color: green;
+  color: white;
+  width: 60px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+}
+
+.user-input {
+  height: 26px;
+  border-radius: 10px;
+  margin-right: 5px;
+  height: 41px;
+  flex-grow: 1;
+  padding-left: 12px;
+}
+
+.input-container {
+  display: flex;
+  margin-bottom: 10px;
+}
