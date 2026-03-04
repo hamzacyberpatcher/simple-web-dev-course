@@ -1,42 +1,64 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.send-button {
+  background-color: green;
+  color: white;
+  width: 60px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.user-input {
+  height: 26px;
+  border-radius: 10px;
+  margin-right: 5px;
+  height: 41px;
+  flex-grow: 1;
+  padding-left: 12px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-container {
+  display: flex;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app-container {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.card {
-  padding: 2em;
+.msg-box-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: start;
+  margin-top: 5px;
 }
 
-.read-the-docs {
-  color: #888;
+.msg-box-robot {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-top: 5px;
+}
+
+.msg-box {
+  background-color: lightgrey;
+  padding: 12px 15px;
+  margin-top: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+
+.chat-messages-container {
+  flex-grow: 1;
+  margin-top: 10px;
+  overflow: scroll;
+  scrollbar-width: none;
 }
