@@ -1,6 +1,7 @@
 import './OrdersPage.css'
 import { Header } from '../components/Header';
 import { Link } from 'react-router';
+import OrdersFavicon from '../assets/orders-favicon.png'
 
 export function OrdersPage() {
     return (
@@ -8,7 +9,7 @@ export function OrdersPage() {
             
             <Header />
             <title>Orders</title>
-            <link rel="icon" href="images/orders-favicon.png" />
+            <link rel="icon" href={OrdersFavicon} />
 
             <div className="orders-page">
                 <div className="page-title">Your Orders</div>
