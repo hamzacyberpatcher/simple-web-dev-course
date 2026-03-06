@@ -84,8 +84,8 @@ export function OrdersPage({ cart }) {
                                                 </div>
                                             </Fragment>
                                         );
-                                    })}                                    
-                            </div>
+                                    })}
+                                </div>
                             </div>
                         );
                     })}
