@@ -1,7 +1,7 @@
-import './Orders.css'
+import './OrdersPage.css'
 import './header.css'
 
-export function Orders() {
+export function OrdersPage() {
     return (
         <>
             <div className="header">

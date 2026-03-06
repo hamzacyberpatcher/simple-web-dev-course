@@ -1,7 +1,7 @@
 import './header.css'
-import './Tracking.css'
+import './TrackingPage.css'
 
-export function Tracking() {
+export function TrackingPage() {
     return (
         <>
             <div className="header">
