@@ -31,7 +31,7 @@ export function CheckOutPage({ cart }) {
             <title>Checkout</title>
             <link rel="icon" href={CartFavicon} />
 
-            <CheckoutPageHeader />
+            <CheckoutPageHeader cart ={cart} />
 
             <div className="checkout-page">
                 <div className="page-title">Review your order</div>
