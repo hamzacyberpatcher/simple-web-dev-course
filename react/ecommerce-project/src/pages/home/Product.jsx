@@ -28,7 +28,7 @@ export function Product({ product, loadCart }) {
             </div>
 
             <div className="product-name limit-text-to-2-lines">
-                {product.image}
+                {product.name}
             </div>
 
             <div className="product-rating-container">
